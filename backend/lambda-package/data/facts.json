@@ -1,0 +1,21 @@
+{
+    "full_name": "Andrew Lee",
+    "name": "Andrew",
+    "current_role": "AI consultant",
+    "location": "Taipei, Taiwan",
+    "email": "andrewlee.tw@gmail.com",
+    "linkedin": "linkedin.com/in/andrewlee1989",
+    "specialties": [
+      "Generative AI application development",
+      "AI generative content creation",
+      "Go to market strategy for AI products"
+    ],
+    "years_experience": 3,
+    "education": [
+      {
+        "degree": "Your Degree",
+        "institution": "Your University",
+        "year": "2020"
+      }
+    ]
+  }

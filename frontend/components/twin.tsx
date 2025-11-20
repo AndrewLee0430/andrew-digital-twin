@@ -41,16 +41,19 @@ export default function Twin() {
         setIsLoading(true);
 
         try {
-            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'}/chat`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    message: userMessage.content,
-                    session_id: sessionId || undefined,
-                }),
-            });
+            const response = await fetch(
+                `${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'}/chat`,
+                {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        message: userMessage.content,
+                        session_id: sessionId || undefined,
+                    }),
+                }
+            );
 
             if (!response.ok) throw new Error('Failed to send message');
 
@@ -157,16 +160,13 @@ export default function Twin() {
                         <div
                             className={`max-w-[70%] rounded-lg p-3 ${
                                 message.role === 'user'
-                                    ? 'bg-slate-700 text-white'
+                                    ? 'bg-emerald-400 text-white'   // 使用者訊息泡泡：綠色
                                     : 'bg-white border border-gray-200 text-gray-800'
                             }`}
                         >
                             <p className="whitespace-pre-wrap">{message.content}</p>
-                            <p
-                                className={`text-xs mt-1 ${
-                                    message.role === 'user' ? 'text-slate-300' : 'text-gray-500'
-                                }`}
-                            >
+                            {/* 時間文字：統一灰色 */}
+                            <p className="text-xs mt-1 text-gray-500">
                                 {message.timestamp.toLocaleTimeString()}
                             </p>
                         </div>
@@ -219,7 +219,7 @@ export default function Twin() {
                         onChange={(e) => setInput(e.target.value)}
                         onKeyDown={handleKeyPress}
                         placeholder="Type your message..."
-                        className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate-600 focus:border-transparent text-gray-800"
+                        className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:border-transparent text-gray-800"
                         disabled={isLoading}
                         autoFocus
                     />

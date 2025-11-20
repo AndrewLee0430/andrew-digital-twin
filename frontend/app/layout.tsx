@@ -13,12 +13,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Andrew — Nice to Meet you",
-  description: "Your AI course companion",
-  icons: {
-    icon: "/icon.png?v=2",   // 會使用 frontend/app/icon.png
-  },
+  title: 'Andrew — Nice to Meet you',
+  description: "Let's chat",
+  
 };
+
 
 export default function RootLayout({
   children,

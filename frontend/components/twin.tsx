@@ -82,7 +82,6 @@ export default function Twin() {
             setMessages(prev => [...prev, errorMessage]);
         } finally {
             setIsLoading(false);
-            // Refocus the input after message is sent
             setTimeout(() => {
                 inputRef.current?.focus();
             }, 100);
@@ -99,7 +98,6 @@ export default function Twin() {
     // Check if avatar exists
     const [hasAvatar, setHasAvatar] = useState(false);
     useEffect(() => {
-        // Check if avatar.png exists
         fetch('/avatar.png', { method: 'HEAD' })
             .then(res => setHasAvatar(res.ok))
             .catch(() => setHasAvatar(false));
@@ -113,7 +111,8 @@ export default function Twin() {
                     <Bot className="w-6 h-6" />
                     AI Digital Twin
                 </h2>
-                <p className="text-sm text-emerald-100 mt-1">Your AI course companion</p>
+                {/* 這一行如果之後想拿掉 subtitle，直接刪掉 <p> 即可 */}
+                <p className="text-sm text-emerald-100 mt-1">Let's Chat</p>
             </div>
 
             {/* Messages */}
@@ -160,13 +159,18 @@ export default function Twin() {
                         <div
                             className={`max-w-[70%] rounded-lg p-3 ${
                                 message.role === 'user'
-                                    ? 'bg-emerald-400 text-white'   // 使用者訊息泡泡：綠色
+                                    ? 'bg-emerald-500 text-white'   // 使用者泡泡：綠色
                                     : 'bg-white border border-gray-200 text-gray-800'
                             }`}
                         >
                             <p className="whitespace-pre-wrap">{message.content}</p>
-                            {/* 時間文字：統一灰色 */}
-                            <p className="text-xs mt-1 text-gray-500">
+                            <p
+                                className={`text-xs mt-1 ${
+                                    message.role === 'user'
+                                        ? 'text-emerald-50'         // ✅ 時間改成淡綠色
+                                        : 'text-gray-500'
+                                }`}
+                            >
                                 {message.timestamp.toLocaleTimeString()}
                             </p>
                         </div>

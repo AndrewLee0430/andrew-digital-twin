@@ -105,12 +105,12 @@ export default function Twin() {
     return (
         <div className="flex flex-col h-full bg-gray-50 rounded-lg shadow-lg">
             {/* Header */}
-            <div className="bg-gradient-to-r from-slate-700 to-slate-800 text-white p-4 rounded-t-lg">
+            <div className="bg-gradient-to-r from-emerald-500 to-emerald-600 text-white p-4 rounded-t-lg">
                 <h2 className="text-xl font-semibold flex items-center gap-2">
                     <Bot className="w-6 h-6" />
                     AI Digital Twin
                 </h2>
-                <p className="text-sm text-slate-300 mt-1">Your AI course companion</p>
+                <p className="text-sm text-emerald-100 mt-1">Your AI course companion</p>
             </div>
 
             {/* Messages */}
@@ -118,9 +118,9 @@ export default function Twin() {
                 {messages.length === 0 && (
                     <div className="text-center text-gray-500 mt-8">
                         {hasAvatar ? (
-                            <img 
-                                src="/avatar.png" 
-                                alt="Digital Twin Avatar" 
+                            <img
+                                src="/avatar.png"
+                                alt="Digital Twin Avatar"
                                 className="w-20 h-20 rounded-full mx-auto mb-3 border-2 border-gray-300"
                             />
                         ) : (
@@ -141,9 +141,9 @@ export default function Twin() {
                         {message.role === 'assistant' && (
                             <div className="flex-shrink-0">
                                 {hasAvatar ? (
-                                    <img 
-                                        src="/avatar.png" 
-                                        alt="Digital Twin Avatar" 
+                                    <img
+                                        src="/avatar.png"
+                                        alt="Digital Twin Avatar"
                                         className="w-8 h-8 rounded-full border border-slate-300"
                                     />
                                 ) : (
@@ -185,9 +185,9 @@ export default function Twin() {
                     <div className="flex gap-3 justify-start">
                         <div className="flex-shrink-0">
                             {hasAvatar ? (
-                                <img 
-                                    src="/avatar.png" 
-                                    alt="Digital Twin Avatar" 
+                                <img
+                                    src="/avatar.png"
+                                    alt="Digital Twin Avatar"
                                     className="w-8 h-8 rounded-full border border-slate-300"
                                 />
                             ) : (
@@ -226,7 +226,7 @@ export default function Twin() {
                     <button
                         onClick={sendMessage}
                         disabled={!input.trim() || isLoading}
-                        className="px-4 py-2 bg-slate-700 text-white rounded-lg hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-600 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                        className="px-4 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-600 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                     >
                         <Send className="w-5 h-5" />
                     </button>

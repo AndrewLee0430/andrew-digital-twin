@@ -14,7 +14,10 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Andrew — Nice to Meet you",
-  description: "A lively AI coach experience for sales and personal branding.",
+  description: "Your AI course companion",
+  icons: {
+    icon: "/icon.png?v=2",   // 會使用 frontend/app/icon.png
+  },
 };
 
 export default function RootLayout({
